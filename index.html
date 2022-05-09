@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="Deepart">
+    <meta name="theme-color" content="#18b4fd">
+    <meta name="keywords" content="placeholder image, generate placeholder image, javascript project, deepart">
+    <meta name="description" content="Create placeholder image is a JavaScript project, which can help developers to create the image to use as placeholder.">
+    <meta name="image" content="https://vanillajavascript.deepart.in/assets/images/hotlink-ok/deepart_500.png">
+
+    <meta itemprop="name" content="Create Placeholder Image | Deepart">
+    <meta itemprop="description" content="Create placeholder image is a JavaScript project, which can help developers to create the image to use as placeholder.">
+    <meta itemprop="image" content="https://vanillajavascript.deepart.in/assets/images/hotlink-ok/deepart_500.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Create Placeholder Image | Deepart">
+    <meta name="twitter:description" content="Create placeholder image is a JavaScript project, which can help developers to create the image to use as placeholder.">
+    <meta name="twitter:site" content="@rathor_deepti">
+    <meta name="twitter:creator" content="@rathor_deepti">
+    <meta name="twitter:image:src" content="https://vanillajavascript.deepart.in/assets/images/hotlink-ok/deepart_500.png">
+
+    <meta property="og:title" content="Create Placeholder Image | Deepart">
+    <meta property="og:description" content="Create placeholder image is a JavaScript project, which can help developers to create the image to use as placeholder.">
+    <meta property="og:image" content="https://vanillajavascript.deepart.in/assets/images/hotlink-ok/deepart_500.png">
+    <meta property="og:url" content="https://vanillajavascript.deepart.in/">
+    <meta property="og:site_name" content="Create Placeholder Image | Deepart">
+    <meta property="og:type" content="website">
+
+    <meta property="fb:admins" content="deepart04">
+    <link rel="icon" href="https://vanillajavascript.deepart.in/assets/images/deepart_favicon.png">
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css" />
+    <title>Create Placeholder Image | Deepart</title>
+    <style>
+        canvas {
+            border: 1px solid #d3d3d3;
+            max-width: max-content;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:hover {
+            color: inherit;
+        }
+
+        nav .uk-logo,
+        footer p {
+            color: #fff;
+        }
+
+        nav .uk-logo:hover {
+            color: #fff;
+        }
+
+        .uk-button-primary {
+            background: #17a2b8;
+        }
+
+        .uk-button-primary:hover {
+            background: #1a7483;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="uk-margin uk-background-secondary" uk-navbar>
+        <div class="uk-container">
+            <div class="uk-navbar-center uk-navbar-justify">
+                <h1 class="uk-navbar-item uk-logo uk-margin-remove">Create Placeholder Image</h1>
+            </div>
+        </div>
+    </nav>
+
+    <main class="uk-padding">
+        <div class="uk-container">
+            <form id="generator-form" class="uk-grid-small uk-grid uk-margin-bottom" uk-grid>
+                <div class="uk-width-1-2@s uk-width-1-3@m uk-margin-bottom">
+                    <label class="uk-form-label" for="width">Width</label>
+                    <input class="uk-input" type="text" value="600" id="width">
+                </div>
+
+                <div class="uk-width-1-2@s uk-width-1-3@m uk-margin-bottom">
+                    <label class="uk-form-label" for="height">Height</label>
+                    <input class="uk-input" type="text" value="400" id="height">
+                </div>
+
+                <div class="uk-width-1-2@s uk-width-1-3@m uk-margin-bottom">
+                    <label class="uk-form-label" for="font_size">Font size</label>
+                    <input class="uk-input" type="text" value="40" id="font_size">
+                </div>
+
+                <div class="uk-width-1-2@s uk-width-1-3@m uk-margin-bottom">
+                    <label class="uk-form-label" for="text_color">Text Color</label>
+                    <div class="uk-grid-small uk-grid uk-margin-auto" uk-grid>
+                        <input class="uk-input uk-width-4-5" type="text" value="#919191" id="text_color">
+                        <input type="color" class="uk-input color-preivew uk-width-1-5 uk-padding-remove" value="#919191" id="text_color-2">
+                    </div>
+                </div>
+
+                <div class="uk-width-1-2@s uk-width-1-3@m uk-margin-bottom">
+                    <label class="uk-form-label" for="bg_color">Background Color</label>
+                    <div class="uk-grid-small uk-grid uk-margin-auto" uk-grid>
+                        <input class="uk-input uk-width-4-5" type="text" value="#f2f2f2" id="bg_color">
+                        <input type="color" class="uk-input color-preivew uk-width-1-5 uk-padding-remove" value="#f2f2f2" id="bg_color-2">
+                    </div>
+                </div>
+
+                <div class="uk-width-1-2@s uk-width-1-3@m uk-margin-bottom">
+                    <label class="uk-form-label" for="text_value">Text</label>
+                    <input class="uk-input" type="text" id="text_value">
+                </div>
+
+                <div class="uk-form-horizontal uk-width-1-1\@s">
+                    <label for="image-type" class="uk-form-label">Image Format</label>
+                    <select class="uk-select" name="image-type" id="image-type">
+                        <option value="png" selected>png</option>
+                        <option value="jpeg">jpeg</option>
+                        <option value="webp">webp</option>
+                    </select>
+                </div>
+
+
+                <div class="uk-width-1-1\@s uk-margin-top uk-flex uk-flex-right">
+                    <!-- <button id="img-generator" class="uk-button uk-button-secondary">Generate Image</button> -->
+                    <a id="download-img" class="uk-display-block uk-button uk-button-primary uk-margin-left" disabled>Download image</a>
+                </div>
+            </form>
+
+            <div class="uk-flex uk-flex-center">
+                <canvas oncontextmenu="return false" id="previewCanvas">Your browser does not support the HTML canvas tag.</canvas>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="uk-background-secondary uk-padding-small uk-margin-top">
+        <div class="uk-container">
+            <p class="uk-text-center">©
+                <a href="http://deepart.in" target="_blank" rel="noopener noreferrer">Deepart</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script/app.js"></script>
+
+</body>
+
+</html>
